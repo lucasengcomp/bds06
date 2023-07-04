@@ -1,10 +1,11 @@
-package com.devsuperior.movieflix.services;
+package com.devsuperior.movieflix.services.impl;
 
 
 import com.devsuperior.movieflix.dto.GenreDTO;
 import com.devsuperior.movieflix.entities.Genre;
 import com.devsuperior.movieflix.repositories.GenreRepository;
 import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
+import com.devsuperior.movieflix.services.interfaces.GenreServiceIT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +15,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class GenreService {
+public class GenreServiceImpl implements GenreServiceIT {
 
     @Autowired
     private GenreRepository repository;

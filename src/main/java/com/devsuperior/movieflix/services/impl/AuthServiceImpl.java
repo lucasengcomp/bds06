@@ -1,9 +1,10 @@
-package com.devsuperior.movieflix.services;
+package com.devsuperior.movieflix.services.impl;
 
 import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.UserRepository;
 import com.devsuperior.movieflix.services.exceptions.ForbiddenException;
 import com.devsuperior.movieflix.services.exceptions.UnauthorizedException;
+import com.devsuperior.movieflix.services.interfaces.AuthServiceIT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 @Service
-public class AuthService {
+public class AuthServiceImpl implements AuthServiceIT {
 
     @Autowired
     private UserRepository userRepository;

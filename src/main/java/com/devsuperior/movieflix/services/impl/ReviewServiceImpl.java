@@ -1,4 +1,4 @@
-package com.devsuperior.movieflix.services;
+package com.devsuperior.movieflix.services.impl;
 
 import com.devsuperior.movieflix.dto.ReviewDTO;
 import com.devsuperior.movieflix.entities.Movie;
@@ -7,6 +7,8 @@ import com.devsuperior.movieflix.entities.User;
 import com.devsuperior.movieflix.repositories.MovieRepository;
 import com.devsuperior.movieflix.repositories.ReviewRepository;
 import com.devsuperior.movieflix.services.exceptions.ResourceNotFoundException;
+import com.devsuperior.movieflix.services.interfaces.AuthServiceIT;
+import com.devsuperior.movieflix.services.interfaces.ReviewServiceIT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class ReviewService {
+public class ReviewServiceImpl implements ReviewServiceIT {
 
     @Autowired
     private ReviewRepository reviewRepository;
@@ -25,7 +27,7 @@ public class ReviewService {
     private MovieRepository movieRepository;
 
     @Autowired
-    private AuthService authService;
+    private AuthServiceIT authService;
 
     @Transactional
     public ReviewDTO saveReview(ReviewDTO dto) {
