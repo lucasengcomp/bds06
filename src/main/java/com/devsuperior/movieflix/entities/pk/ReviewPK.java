@@ -3,20 +3,21 @@ package com.devsuperior.movieflix.entities.pk;
 import com.devsuperior.movieflix.entities.Movie;
 import com.devsuperior.movieflix.entities.User;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.util.Objects;
 
 public class ReviewPK {
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "movie_id")
     private Movie movie;
 
     public ReviewPK() {
-    }
-
-    public ReviewPK(User user, Movie movie) {
-        this.user = user;
-        this.movie = movie;
     }
 
     public User getUser() {
